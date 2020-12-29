@@ -1,0 +1,16 @@
+{
+    "name": "damask/php-mvc",
+    "description": "Build of the PHP MVC exercise by The Codeholic",
+    "authors": [
+        {
+            "name": "damask",
+            "email": "danieljfloris@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4":{
+            "app\\": "./"
+        }
+    },
+    "require": {}
+}
