@@ -7,9 +7,7 @@ namespace app\controllers;
  * @author daMask
  * @package app\controllers
  */
-// Not sure if this line is correct
 
-use app\core\Application;
 use app\core\Controller;
 use app\core\Request;
 

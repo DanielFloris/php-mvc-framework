@@ -13,6 +13,7 @@ namespace app\core;
    public Router $router;
    public Request $request;
    public static Application $app;
+   public Controller $controller;
 
      public function __construct($rootPath){
         self::$ROOT_DIR = $rootPath;
@@ -25,4 +26,22 @@ namespace app\core;
      public function run(){
         echo $this->router->resolve();
      }
+
+   /**
+    * Get the value of controller
+    */ 
+   public function getController()
+   {
+      return $this->controller;
+   }
+
+   /**
+    * Set the value of controller
+    *
+    */ 
+   public function setController(Controller $controller)
+   {
+      $this->controller = $controller;
+
+   }
  }
