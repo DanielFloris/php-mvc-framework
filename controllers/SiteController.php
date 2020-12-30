@@ -8,7 +8,10 @@ namespace app\controllers;
  * @package app\controllers
  */
 // Not sure if this line is correct
+
+use app\core\Application;
 use app\core\Controller;
+use app\core\Request;
 
 class SiteController extends Controller
  {
@@ -16,11 +19,15 @@ class SiteController extends Controller
          $params = [ 'name' => 'daMask'];
          return $this->render('home', $params);
      }
-     public function contact(){
-      
+     public function contact(){      
         return $this->render('contact');
     }
-     public function handleContact() {
+     public function handleContact(Request $request) {
+         $body = $request->getBody();
+            echo '<pre>';
+            var_dump($body);
+            echo '</pre>';
+            exit;
          return 'Handling submitted data';
      }
  }
