@@ -3,6 +3,8 @@
 namespace app\core\form;
 
 use app\core\Model;
+use Attribute;
+
 /**
  * Class Field
  * 
@@ -31,7 +33,7 @@ class Field
                 <div class="invalid-feedback">%s</div>
             </div>
         ', 
-            $this->attribute,
+            $this->model->getLabel($this->attribute),
             $this->type,
             $this->attribute, 
             $this->model->{$this->attribute},
