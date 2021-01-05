@@ -39,7 +39,10 @@
             <?php else: ?>
             <ul class="navbar-nav me-auto mb-2 ml-2">
             <li class="nav-item">
-                    <a class="nav-link" href="/logout">Welcome <?php echo Application::$app->user->getDisplayName(); ?> Logout</a>
+                   <a class="nav-link" href="/profile">Profile</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link" href="/logout">(Logout)</a>
                 </li>
             </ul>
             <?php endif; ?>
