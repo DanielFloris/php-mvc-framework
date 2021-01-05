@@ -19,6 +19,7 @@ namespace app\core;
    public ?Controller $controller = null;
    public Session $session;
    public ?DbModel $user;
+   public View $view;
 
      public function __construct($rootPath, array $config){
         self::$ROOT_DIR = $rootPath;
@@ -29,6 +30,7 @@ namespace app\core;
         $this->db = new Database($config['db']);
         $this->userClass = $config['userClass'];
         $this->session = new Session();
+        $this->view = new View();
         $primaryValue = $this->session->get('user');
         if($primaryValue){
            $primaryKey = $this->userClass::primaryKey();
@@ -43,7 +45,7 @@ namespace app\core;
              echo $this->router->resolve();
         } catch (\Exception $e){
            $this->response->setStatusCode($e->getCode());
-            echo $this->router->renderView('_error', ['exception'=> $e]);
+            echo $this->view->renderView('_error', ['exception'=> $e]);
         }
       
      }

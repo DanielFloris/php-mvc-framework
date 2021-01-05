@@ -22,16 +22,16 @@ use app\models\LoginForm;
          $this->registerMiddleware( new AuthMiddleware(['profile']));
      }
      public function login(Request $request, Response $response){
-         $loginForm = new LoginForm();
-         if($request->isPost()){
-             $loginForm->loadData($request->getBody());
-             if($loginForm->validate() && $loginForm->login()){
-                $response->redirect('/');
-                return;
-             }
-         }
-         $this->setLayout('auth');
-         return $this->render('login', [ 'model' => $loginForm]);
+        $loginForm = new LoginForm();
+        if($request->isPost()){
+            $loginForm->loadData($request->getBody());
+            if($loginForm->validate() && $loginForm->login()){
+            $response->redirect('/');
+            return;
+            }
+        }
+        $this->setLayout('auth');
+        return $this->render('login', [ 'model' => $loginForm]);
      }
 
      public function register(Request $request){    
