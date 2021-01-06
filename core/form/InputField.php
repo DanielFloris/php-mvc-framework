@@ -11,7 +11,7 @@ use app\core\Model;
  * @author daMask
  * @package app\core\form
  */
-class Field extends BaseField
+class InputField extends BaseField
 {
     public const TYPE_TEXT = 'text';
     public const TYPE_PASS = 'password';
@@ -21,8 +21,7 @@ class Field extends BaseField
     public string $type;
     public function __construct( Model $model, string $attribute){
         $this->type = self::TYPE_TEXT;
-        $this->model = $model;
-        $this->attribute = $attribute; 
+        parent::__construct($model, $attribute);
     }
 
     public function renderInput(): string { 
